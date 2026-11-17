@@ -1,0 +1,7 @@
+# Fichiers sensibles et temporaires (Section 8 du cahier des charges)
+data/secret.php
+data/.login_attempts.json
+*.tmp*
+*.log
+.DS_Store
+Thumbs.db

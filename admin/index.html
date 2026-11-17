@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration — ANI MARKET</title>
+  
+  <!-- Discrétion & Sécurité (Section 8) -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self';">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/monogramme.svg">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Admin -->
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+
+  <!-- EN-TÊTE ADMIN -->
+  <header class="admin-header">
+    <div class="admin-header-brand">
+      <img src="../assets/brand/logo-44.webp" alt="Logo" class="admin-header-logo">
+      <span class="admin-header-title">ANI MARKET</span>
+      <span class="admin-header-badge">Admin</span>
+    </div>
+    <a href="../" target="_blank" class="btn-admin btn-admin-outline" style="font-size:0.8rem; height:34px; color:#fff; border-color:var(--gold);">
+      <span>Voir la boutique</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+    </a>
+  </header>
+
+  <!-- BANDEAU DE MODE DYNAMIQUE (DIRECT VS EXPORT) -->
+  <div id="mode-banner" class="mode-banner">
+    <div class="mode-banner-text" id="mode-banner-text">
+      <!-- Rempli par admin.js -->
+    </div>
+    <div id="mode-banner-action"></div>
+  </div>
+
+  <!-- SECTION 1 : AUTHENTIFICATION (LOGIN OU SETUP) -->
+  <div class="auth-wrapper" id="auth-section">
+    <div class="auth-card">
+      <img src="../assets/brand/logo-rond.png" alt="ANI MARKET" class="auth-logo">
+      <h1 class="auth-title" id="auth-title">Connexion Administrateur</h1>
+      <p class="auth-desc" id="auth-desc">Accédez à la gestion de votre boutique en ligne.</p>
+
+      <form id="auth-form">
+        <div class="form-group">
+          <label class="form-label" for="auth-code-input">Code d'accès personnel</label>
+          <div class="password-box">
+            <input type="password" id="auth-code-input" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" class="password-toggle-btn" id="auth-toggle-pass" aria-label="Afficher / Masquer">👁</button>
+          </div>
+        </div>
+
+        <div class="form-group" id="auth-code-confirm-group" style="display:none;">
+          <label class="form-label" for="auth-code-confirm-input">Confirmez votre code d'accès</label>
+          <input type="password" id="auth-code-confirm-input" class="form-input" placeholder="••••••••" autocomplete="new-password">
+        </div>
+
+        <div id="auth-error-msg" style="color:var(--danger); font-size:0.85rem; margin-bottom:14px; text-align:left;"></div>
+
+        <button type="submit" class="btn-admin btn-admin-gold" id="auth-submit-btn" style="width:100%; height:48px;">
+          Accéder à l'administration
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SECTION 2 : TABLEAU DE BORD (APRÈS CONNEXION) -->
+  <div class="admin-main" id="admin-dashboard" style="display:none;">
+
+    <!-- ONGLET 1 : PRODUITS -->
+    <section class="admin-tab-pane active" id="tab-products">
+      <div class="admin-card">
+        <div class="admin-card-title">
+          <span>Gestion des produits</span>
+          <button class="btn-admin btn-admin-gold" id="btn-add-product" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>Ajouter un produit</span>
+          </button>
+        </div>
+
+        <!-- Filtres et Recherche -->
+        <div style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
+          <input type="text" class="form-input" id="admin-search-input" placeholder="Rechercher par nom..." style="flex:1; min-width:200px;">
+          <select class="form-select" id="admin-cat-filter" style="width:auto; min-width:180px;">
+            <!-- Rempli par admin.js -->
+          </select>
+        </div>
+
+        <!-- Liste des produits -->
+        <div id="admin-products-list">
+          <!-- Rempli par admin.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ONGLET 2 : CATÉGORIES -->
+    <section class="admin-tab-pane" id="tab-categories">
+      <div class="admin-card">
+        <h2 class="admin-card-title">Catégories de la boutique</h2>
+        <p style="font-size:0.88rem; color:var(--ink-light); margin-bottom:20px;">
+          Vous pouvez réordonner les catégories, les renommer ou masquer celles que vous ne souhaitez pas afficher sur le site public.
+        </p>
+
+        <div id="categories-list">
+          <!-- Rempli par admin.js -->
+        </div>
+
+        <!-- Formulaire d'ajout de catégorie -->
+        <form id="new-cat-form" style="margin-top:24px; padding-top:20px; border-top:1px dashed var(--gold); display:flex; gap:12px; align-items:flex-end;">
+          <div class="form-group" style="flex:1; margin-bottom:0;">
+            <label class="form-label" for="new-cat-name">Nouvelle catégorie</label>
+            <input type="text" class="form-input" id="new-cat-name" placeholder="Ex: Bijoux, Robes..." required>
+          </div>
+          <button type="submit" class="btn-admin btn-admin-gold" style="height:44px;">Ajouter</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ONGLET 3 : RÉGLAGES -->
+    <section class="admin-tab-pane" id="tab-settings">
+      <div class="admin-card">
+        <h2 class="admin-card-title">Réglages &amp; Identité de la boutique</h2>
+
+        <form id="settings-form">
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            <div class="form-group">
+              <label class="form-label" for="sett-name">Nom de la boutique</label>
+              <input type="text" class="form-input" id="sett-name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sett-whatsapp">Numéro WhatsApp de réception</label>
+              <input type="text" class="form-input" id="sett-whatsapp" placeholder="Ex: 2290196273834" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sett-tagline">Slogan principal (Hero)</label>
+            <input type="text" class="form-input" id="sett-tagline" placeholder="Ex: Il y a un peu de tout pour vous !">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sett-punchline">Accroche secondaire</label>
+            <input type="text" class="form-input" id="sett-punchline" placeholder="Ex: Achetez malin, vivez mieux !">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sett-group-url">Lien d'invitation du groupe WhatsApp (optionnel)</label>
+            <input type="url" class="form-input" id="sett-group-url" placeholder="https://chat.whatsapp.com/...">
+            <small style="color:var(--ink-light); font-size:0.75rem;">Si vide, la section « Rejoindre le groupe » reste masquée sur le site public.</small>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sett-location">Localisation de la boutique (optionnel)</label>
+            <input type="text" class="form-input" id="sett-location" placeholder="Ex: Cotonou, quartier Cadjèhoun">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sett-delivery">Informations sur la livraison (optionnel)</label>
+            <textarea class="form-textarea" id="sett-delivery" rows="2" placeholder="Ex: Livraison partout à Cotonou et Calavi sous 24h. Expédition possible dans tout le Bénin."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sett-payment">Modalités de paiement (optionnel)</label>
+            <textarea class="form-textarea" id="sett-payment" rows="2" placeholder="Ex: Paiement Mobile Money (MTN / Moov) ou espèces à la livraison."></textarea>
+          </div>
+
+          <!-- Logo -->
+          <div class="form-group" style="padding-top:10px; border-top:1px dashed #ddd;">
+            <label class="form-label">Logo de la boutique</label>
+            <div style="display:flex; align-items:center; gap:16px;">
+              <img src="../assets/brand/logo-rond.png" alt="Logo actuel" id="current-logo-img" style="width:60px; height:60px; border-radius:50%; border:1.5px solid var(--gold); object-fit:cover;">
+              <div>
+                <input type="file" id="sett-logo-file" accept="image/*" style="display:none;">
+                <button type="button" class="btn-admin btn-admin-outline" onclick="document.getElementById('sett-logo-file').click()">Changer le logo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Crédit développeur -->
+          <div class="form-group" style="margin-top:14px;">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+              <input type="checkbox" id="sett-show-credit">
+              <span style="font-size:0.9rem;">Afficher le crédit « Site réalisé avec soin » en pied de page</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-admin btn-admin-gold" style="margin-top:16px; height:48px;">
+            Enregistrer les réglages
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ONGLET 4 : COMPTE & SYSTÈME -->
+    <section class="admin-tab-pane" id="tab-account">
+      <div class="admin-card">
+        <h2 class="admin-card-title">État du système &amp; Publication</h2>
+        <p id="system-mode-text" style="font-size:0.92rem; color:var(--ink-light); margin-bottom:16px;"></p>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px;">
+          <button class="btn-admin btn-admin-gold" id="btn-export-zip">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span>Télécharger le paquet complet (ZIP)</span>
+          </button>
+          <button class="btn-admin btn-admin-outline" id="btn-reset-draft">
+            Réinitialiser le brouillon local
+          </button>
+        </div>
+
+        <h3 style="font-family:var(--font-serif); font-size:1.15rem; margin-bottom:12px; padding-top:20px; border-top:1px dashed #ddd;">
+          Modifier mon code d'accès
+        </h3>
+        <form id="change-code-form" style="max-width:400px;">
+          <div class="form-group">
+            <label class="form-label" for="old-code-input">Ancien code d'accès</label>
+            <input type="password" class="form-input" id="old-code-input" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="new-code-input">Nouveau code d'accès (8 car. min)</label>
+            <input type="password" class="form-input" id="new-code-input" required minlength="8">
+          </div>
+          <button type="submit" class="btn-admin btn-admin-outline" style="margin-bottom:28px;">
+            Mettre à jour le code
+          </button>
+        </form>
+
+        <div style="padding-top:20px; border-top:1px solid #eee;">
+          <button class="btn-admin btn-admin-danger" id="btn-logout" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+            <span>Se déconnecter</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- BARRE DE NAVIGATION BASSE (MOBILE & DESKTOP) -->
+  <nav class="bottom-nav">
+    <button class="nav-tab-btn active" data-tab="tab-products" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>Produits</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="tab-categories" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span>Catégories</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="tab-settings" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span>Réglages</span>
+    </button>
+    <button class="nav-tab-btn" data-tab="tab-account" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Compte</span>
+    </button>
+  </nav>
+
+  <!-- MODALE ÉDITEUR PRODUIT -->
+  <div class="editor-modal-overlay" id="editor-modal-overlay" role="dialog" aria-modal="true" aria-label="Édition produit">
+    <div class="editor-dialog">
+      <div class="editor-header">
+        <h2 style="font-family:var(--font-serif); font-size:1.25rem;" id="editor-modal-title">Ajouter un produit</h2>
+        <button type="button" class="sheet-close-btn" id="editor-close-btn">✕</button>
+      </div>
+
+      <div class="editor-body">
+        <!-- Formulaire de saisie -->
+        <form id="editor-form">
+          <div class="form-group">
+            <label class="form-label" for="editor-prod-name">Nom du produit *</label>
+            <input type="text" class="form-input" id="editor-prod-name" required maxlength="200" placeholder="Ex: Pagne Adiré - rouge à cœurs">
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div class="form-group">
+              <label class="form-label" for="editor-prod-cat">Catégorie</label>
+              <select class="form-select" id="editor-prod-cat">
+                <!-- Rempli par admin.js -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="editor-prod-price">Prix en FCFA *</label>
+              <input type="number" class="form-input" id="editor-prod-price" required min="0" step="50" placeholder="7000">
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div class="form-group">
+              <label class="form-label" for="editor-prod-unit">Unité / Contenance</label>
+              <input type="text" class="form-input" id="editor-prod-unit" placeholder="Ex: les 4 yards, 50 ml, pièce">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="editor-prod-badge">Mise en avant</label>
+              <select class="form-select" id="editor-prod-badge">
+                <option value="">Aucun badge</option>
+                <option value="new">Nouveau</option>
+                <option value="popular">Populaire</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="editor-prod-desc">Description</label>
+            <textarea class="form-textarea" id="editor-prod-desc" rows="3" maxlength="2000" placeholder="Décrivez le tissu, la texture, les ingrédients ou les conseils d'utilisation..."></textarea>
+          </div>
+
+          <!-- Upload Photos -->
+          <div class="form-group">
+            <label class="form-label">Photos du produit (jusqu'à 4 photos, compressées auto)</label>
+            <input type="file" id="editor-image-input" accept="image/*" multiple style="display:none;">
+            <div class="images-uploader" id="image-slots-container">
+              <!-- Rempli par admin.js -->
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:14px;">
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+              <input type="checkbox" id="editor-prod-available" checked>
+              <span style="font-weight:600; font-size:0.9rem;">Produit disponible à la vente (en stock)</span>
+            </label>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px;">
+            <button type="button" class="btn-admin btn-admin-outline" id="editor-cancel-btn">Annuler</button>
+            <button type="submit" class="btn-admin btn-admin-gold" id="editor-save-btn">Enregistrer le produit</button>
+          </div>
+        </form>
+
+        <!-- Aperçu en direct de la carte produit -->
+        <div class="editor-preview-pane">
+          <span style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-d); font-weight:700;">Aperçu direct sur le site</span>
+          
+          <div style="width:220px; background:#fff; border-radius:18px; border:1px solid var(--gold); overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+            <div style="position:relative; aspect-ratio:4/5; overflow:hidden; background:#eee;">
+              <span id="prev-badge" class="card-badge badge-new" style="display:none; position:absolute; top:8px; left:8px; z-index:2; font-size:0.7rem; padding:3px 8px; border-radius:9999px;"></span>
+              <img id="prev-thumb" src="../assets/brand/logo-rond.png" alt="Aperçu" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div style="padding:12px;">
+              <div id="prev-title" style="font-family:var(--font-serif); font-size:0.92rem; font-weight:600; line-height:1.3; min-height:2.6em; margin-bottom:6px;">Nom du produit</div>
+              <div style="display:flex; justify-content:space-between; align-items:baseline;">
+                <span id="prev-price" style="font-weight:700; color:var(--gold-d); font-size:0.95rem;">0 FCFA</span>
+                <span id="prev-unit" style="font-size:0.75rem; color:#777;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNACKBAR ANNULATION (8 SECONDES) -->
+  <div class="undo-snackbar" id="undo-snackbar">
+    <span id="undo-text">Produit supprimé.</span>
+    <button class="undo-btn" id="undo-btn" type="button">Annuler</button>
+  </div>
+
+  <!-- TOAST ADMIN -->
+  <div class="toast-notice" id="admin-toast"></div>
+
+  <!-- SCRIPTS ADMIN -->
+  <script src="../assets/js/zip.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

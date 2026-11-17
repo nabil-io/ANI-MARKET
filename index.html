@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANI MARKET — Boutique de Pagnes, Beauté, Sacs, Chaussures</title>
+  <meta name="description" content="Découvrez le catalogue exclusif ANI MARKET : pagnes Adiré 100 % coton, cosmétiques et soins, sacs et accessoires. Commandez en direct sur WhatsApp !">
+  
+  <!-- Politique de sécurité de contenu (Section 8) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self';">
+  
+  <!-- Open Graph / WhatsApp Preview (Section 3.4 & 9) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ANI MARKET — Il y a un peu de tout pour vous !">
+  <meta property="og:description" content="Boutique en ligne : pagnes Adiré de qualité, soins de beauté, accessoires. Commandez directement sur WhatsApp.">
+  <meta property="og:image" content="assets/brand/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Favicon & Icônes (Section 3.4) -->
+  <link rel="icon" type="image/svg+xml" href="assets/brand/monogramme.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/brand/logo-192.png">
+  <link rel="apple-touch-icon" href="assets/brand/logo-192.png">
+
+  <!-- Polices Google Fonts (Playfair Display + Poppins) avec font-display: swap -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS du site -->
+  <link rel="stylesheet" href="assets/css/site.css">
+
+  <!-- Données structurées JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "ANI MARKET",
+    "description": "Boutique en ligne : pagnes Adiré, soins de beauté, sacs, chaussures et ustensiles.",
+    "telephone": "+2290196273834",
+    "image": "assets/brand/logo-rond.png",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- 1. BANDEAU D'ANNONCE (NOIR & OR CLAIR) -->
+  <div class="announcement-bar" role="region" aria-label="Annonces boutique">
+    <div class="announcement-track">
+      <div class="announcement-item">Achetez malin, vivez mieux ! <span class="sep">•</span> Pagnes Adiré 100 % Coton <span class="sep">•</span> Soins Beauté Vitamine C <span class="sep">•</span> Sacs &amp; Chaussures <span class="sep">•</span> Livraison Rapide &amp; Paiement Sécurisé</div>
+      <div class="announcement-item">Achetez malin, vivez mieux ! <span class="sep">•</span> Pagnes Adiré 100 % Coton <span class="sep">•</span> Soins Beauté Vitamine C <span class="sep">•</span> Sacs &amp; Chaussures <span class="sep">•</span> Livraison Rapide &amp; Paiement Sécurisé</div>
+    </div>
+  </div>
+
+  <!-- 2. EN-TÊTE COLLANT (STICKY HEADER) -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <a href="#" class="brand-link" aria-label="ANI MARKET Accueil">
+        <div class="brand-logo-frame">
+          <img src="assets/brand/logo-44.webp" alt="Logo ANI MARKET" width="44" height="44">
+        </div>
+        <span class="brand-name" id="brand-name">ANI MARKET</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Recherche -->
+        <button class="icon-btn" id="btn-search-header" type="button" aria-label="Rechercher un produit">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+
+        <!-- Panier -->
+        <button class="icon-btn" id="btn-cart-header" type="button" aria-label="Ouvrir mon panier">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cart-count-badge" style="display:none;">0</span>
+        </button>
+
+        <!-- WhatsApp bouton contact rapide -->
+        <a href="https://wa.me/2290196273834" target="_blank" rel="noopener" class="btn btn-wa header-wa-btn" id="btn-wa-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. HERO « GRANDE IMAGE EN HAUTEUR » -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <!-- Médaillon du logo avec deux anneaux dorés tournant en sens inverse -->
+          <div class="hero-medallion-box" aria-hidden="true">
+            <div class="hero-ring-1"></div>
+            <div class="hero-ring-2"></div>
+            <img src="assets/brand/logo-rond.png" alt="Médaillon ANI MARKET" class="hero-medallion-img">
+          </div>
+
+          <h1 class="hero-title" id="hero-title">
+            Il y a un peu <span class="gold-italic">de tout</span> pour vous !
+          </h1>
+          <p class="hero-punchline" id="hero-punchline">
+            Achetez malin, vivez mieux !
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#catalogue" class="btn btn-primary">
+              <span>Voir les produits</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/2290196273834" target="_blank" rel="noopener" class="btn btn-outline-gold" id="hero-btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>Écrire sur WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Arches décoratives de pagnes (desktop / tablette) -->
+        <div class="hero-arches" id="hero-arches-wrap" aria-hidden="true">
+          <!-- Injecté dynamiquement par site.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BANDEAU DES VALEURS (QUALITÉ - CONFIANCE - SATISFACTION) -->
+    <section class="values-banner" aria-label="Engagements de la boutique">
+      <div class="values-container">
+        <div class="value-item">
+          <div class="value-icon-box">
+            <!-- Médaille Qualité -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div>
+            <h2 class="value-title">Qualité certifiée</h2>
+            <p class="value-desc">Tissus 100 % coton et soins d'origine soigneusement sélectionnés.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon-box">
+            <!-- Poignée de main Confiance -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4l-2-2"/><path d="m18 10 3-3a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0l-3 3"/><path d="m2 14 6 6"/><path d="m22 2-6 6"/><path d="M8 22l14-14"/></svg>
+          </div>
+          <div>
+            <h2 class="value-title">Confiance &amp; Écoute</h2>
+            <p class="value-desc">Échange chaleureux et transparent en direct sur WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon-box">
+            <!-- Pouce Satisfaction -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h3"/><path d="M7 10 12 3a2 2 0 0 1 3 2.88z"/></svg>
+          </div>
+          <div>
+            <h2 class="value-title">Satisfaction client</h2>
+            <p class="value-desc">Confirmation rapide, conseils personnalisés et suivi jusqu'à réception.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LA ROUE DES CATÉGORIES -->
+    <section class="categories-wheel-section">
+      <div class="section-head">
+        <p class="section-subtitle">Explorer par univers</p>
+        <h2 class="section-title">La roue des catégories</h2>
+      </div>
+
+      <div class="wheel-scroll-wrap">
+        <div class="wheel-track" id="categories-wheel">
+          <!-- Rempli par site.js -->
+        </div>
+      </div>
+
+      <div class="gold-divider" aria-hidden="true"><span class="diamond"></span></div>
+    </section>
+
+    <!-- 6. COLLECTION À LA UNE : NOS PAGNES -->
+    <section class="featured-collection" id="featured-pagnes-section">
+      <div class="featured-container">
+        <div class="featured-header">
+          <p class="section-subtitle" style="color:var(--gold-l);">Édition spéciale</p>
+          <h2 class="section-title">Nos pagnes d'exception</h2>
+          <p style="color:var(--gold-l); font-size:0.95rem; margin-top:8px; opacity:0.9;">Motifs authentiques, batiks raffinés et coton noble pour toutes vos cérémonies.</p>
+        </div>
+
+        <div class="featured-carousel-wrap" id="featured-pagnes-track">
+          <!-- Rempli par site.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. COUP DE CŒUR BEAUTÉ -->
+    <section class="beauty-spotlight" id="beauty-spotlight-section">
+      <div class="beauty-container">
+        <div class="section-head">
+          <p class="section-subtitle">Sélection éclat</p>
+          <h2 class="section-title">Coups de cœur beauté</h2>
+        </div>
+
+        <div class="products-grid" id="beauty-spotlight-grid">
+          <!-- Rempli par site.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CATALOGUE COMPLET -->
+    <section class="catalog-section" id="catalogue">
+      <div class="section-head">
+        <p class="section-subtitle">Notre vitrine</p>
+        <h2 class="section-title">Tous les produits</h2>
+      </div>
+
+      <!-- Barre d'onglets de catégories collante -->
+      <div class="catalog-sticky-bar">
+        <div class="filter-pills-row" id="category-pills">
+          <!-- Rempli par site.js -->
+        </div>
+      </div>
+
+      <!-- Contrôles : Recherche et Tri -->
+      <div class="catalog-controls">
+        <div class="search-box-wrap">
+          <svg class="search-icon-left" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" class="search-input" id="catalog-search-input" placeholder="Rechercher un pagne, une crème, un sérum..." aria-label="Rechercher dans le catalogue">
+          <button class="search-clear-btn" id="search-clear-btn" type="button" aria-label="Effacer la recherche">✕</button>
+        </div>
+
+        <div class="catalog-meta-row">
+          <span class="results-counter" id="results-counter">Chargement des produits...</span>
+          <select class="sort-select" id="catalog-sort-select" aria-label="Trier les produits">
+            <option value="default">Tri par défaut</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+            <option value="name-asc">Nom (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Grille des produits -->
+      <div class="products-grid" id="products-grid">
+        <!-- Squelettes shimmer de démarrage -->
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+        <div class="shimmer-card"></div>
+      </div>
+
+      <!-- Bouton charger plus -->
+      <div class="load-more-wrap" id="load-more-wrap" style="display:none;">
+        <button class="btn btn-secondary" id="btn-load-more" type="button">
+          <span>Charger d'autres produits</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 9. COMMENT COMMANDER -->
+    <section class="how-to-order-section">
+      <div class="how-container">
+        <div class="section-head">
+          <p class="section-subtitle">Simplicité &amp; Rapidité</p>
+          <h2 class="section-title">Comment commander ?</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Je choisis mes articles</h3>
+            <p class="step-desc">Parcourez le catalogue, sélectionnez vos coups de cœur et ajoutez-les à votre panier ou commandez en direct.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">J'envoie sur WhatsApp</h3>
+            <p class="step-desc">Votre commande génère un message clair et détaillé prérempli d'un simple clic vers le WhatsApp de la boutique.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">La boutique confirme</h3>
+            <p class="step-desc">Nous vous répondons immédiatement pour valider la disponibilité, organiser la livraison et finaliser le paiement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. GROUPE WHATSAPP & INFOS PRATIQUES -->
+    <section class="practical-info-section" id="practical-section">
+      <div class="practical-grid">
+        <!-- Carte Groupe WhatsApp (masquée si vide) -->
+        <div class="wa-group-card" id="wa-group-card" style="display:none;">
+          <h3 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--gold-l);">Rejoignez notre groupe WhatsApp</h3>
+          <p style="font-size:0.95rem; opacity:0.9;">Ne manquez aucun arrivage ! Découvrez les nouveaux pagnes et produits de beauté en avant-première.</p>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-wa" id="wa-group-btn" style="margin-top:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Rejoindre le groupe</span>
+          </a>
+        </div>
+
+        <!-- Cartes localisation, livraison, paiement -->
+        <div class="practical-cards-grid" id="practical-cards-grid">
+          <!-- Rempli dynamiquement -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. APPEL FINAL -->
+    <section class="final-cta-section">
+      <div class="final-cta-container">
+        <h2 class="final-cta-title">Une question ? Un besoin particulier ?</h2>
+        <p class="final-cta-desc">Nous sommes à votre entière écoute pour vous conseiller et vous accompagner dans vos choix.</p>
+        <a href="https://wa.me/2290196273834" target="_blank" rel="noopener" class="btn btn-primary" id="final-wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Écrivez-nous sur WhatsApp</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. PIED DE PAGE -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="assets/brand/logo-44.webp" alt="ANI MARKET" width="44" height="44">
+          <span class="brand-name" style="font-size:1.4rem;">ANI MARKET</span>
+        </div>
+        <p style="font-size:0.9rem; line-height:1.6; opacity:0.85;">
+          Boutique WhatsApp de référence. Pagnes d'exception, soins pour le visage et le corps, accessoires raffinés.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Univers</h3>
+        <ul class="footer-links" id="footer-categories">
+          <!-- Rempli par site.js -->
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Contact rapide</h3>
+        <p style="margin-bottom:8px;">Commandes et renseignements :</p>
+        <a href="https://wa.me/2290196273834" target="_blank" rel="noopener" id="footer-phone" class="price-tag" style="color:var(--gold-l); font-size:1.1rem; display:inline-block; margin-bottom:8px;">
+          +229 01 96 27 38 34
+        </a>
+        <p style="font-size:0.85rem; color:#888; margin-bottom:10px;">Disponibilité 7j/7 sur WhatsApp</p>
+        <a id="footer-group-link" href="#" target="_blank" rel="noopener" style="display:none; color:var(--gold-l); font-size:0.85rem; text-decoration:underline;">
+          Rejoindre le groupe WhatsApp &rarr;
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 ANI MARKET. Tous droits réservés.</div>
+      <div id="footer-credit" style="display:none;">Site réalisé avec soin pour ANI MARKET.</div>
+    </div>
+  </footer>
+
+  <!-- ÉLÉMENTS FLOTTANTS -->
+  <a href="https://wa.me/2290196273834" target="_blank" rel="noopener" class="floating-whatsapp" id="floating-wa" aria-label="Contacter sur WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Retour en haut de page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- BARRE D'ACTION MOBILE : VOIR MON PANIER -->
+  <div class="mobile-cart-bar" id="mobile-cart-bar">
+    <div class="mobile-cart-info">
+      <span class="mobile-cart-count" id="mobile-cart-count">1 article</span>
+      <span class="mobile-cart-total" id="mobile-cart-total">7 000 FCFA</span>
+    </div>
+    <button class="btn btn-primary mobile-cart-btn" id="btn-mobile-cart" type="button">
+      <span>Voir mon panier</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <!-- MODALE TIROIR DU PANIER -->
+  <div class="modal-overlay" id="cart-modal-overlay" role="dialog" aria-modal="true" aria-label="Mon Panier">
+    <div class="cart-sheet">
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <div class="sheet-header">
+        <h3 class="sheet-title">Mon Panier</h3>
+        <button class="sheet-close-btn" id="cart-close-btn" type="button" aria-label="Fermer le panier">✕</button>
+      </div>
+      <div class="cart-items-list" id="cart-items-list">
+        <!-- Rempli par site.js -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total</span>
+          <span class="price-tag" id="cart-total-price">0 FCFA</span>
+        </div>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-wa" id="cart-order-wa-btn" style="width:100%;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Envoyer ma commande sur WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALE FICHE PRODUIT -->
+  <div class="modal-overlay" id="product-modal-overlay" role="dialog" aria-modal="true" aria-label="Fiche Produit">
+    <div class="product-modal-sheet" id="product-modal-sheet">
+      <div class="modal-gallery">
+        <img src="assets/brand/logo-rond.png" alt="Photo produit" id="modal-product-img">
+        <button class="sheet-close-btn" id="product-close-btn" type="button" style="position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.6); color:#fff;" aria-label="Fermer la fiche produit">✕</button>
+      </div>
+
+      <div class="modal-details">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <span class="card-unit" id="modal-product-category" style="text-transform:uppercase; letter-spacing:0.08em; font-weight:600; color:var(--gold-d);"></span>
+        </div>
+
+        <h2 class="modal-product-title font-serif" id="modal-product-title">Nom du produit</h2>
+
+        <div class="modal-price-box">
+          <span class="modal-price price-tag" id="modal-product-price">0 FCFA</span>
+          <span class="card-unit" id="modal-product-unit"></span>
+        </div>
+
+        <p class="modal-desc" id="modal-product-desc"></p>
+
+        <div class="modal-qty-row">
+          <span style="font-weight:600; font-size:0.95rem;">Quantité :</span>
+          <div class="cart-qty-controls" style="padding:4px 10px;">
+            <button class="cart-qty-btn" id="modal-qty-minus" type="button" aria-label="Diminuer la quantité">-</button>
+            <span class="cart-qty-num" id="modal-qty-val" style="min-width:28px;">1</span>
+            <button class="cart-qty-btn" id="modal-qty-plus" type="button" aria-label="Augmenter la quantité">+</button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <a href="#" target="_blank" rel="noopener" class="btn btn-wa" id="modal-btn-order-wa" style="width:100%;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Commander sur WhatsApp</span>
+          </a>
+          <button class="btn btn-secondary" id="modal-btn-add-to-cart" type="button" style="width:100%;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span>Ajouter au panier</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECHERCHE PLEIN ÉCRAN -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Recherche">
+    <div class="search-overlay-header">
+      <input type="text" class="search-overlay-input" id="search-overlay-input" placeholder="Que cherchez-vous ?" aria-label="Champ de recherche">
+      <button class="search-overlay-close" id="search-overlay-close" type="button" aria-label="Fermer la recherche">✕</button>
+    </div>
+    <div class="search-overlay-results" id="search-overlay-results">
+      <!-- Rempli par site.js -->
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notice" id="toast-notice" role="status" aria-live="polite"></div>
+
+  <!-- SCRIPTS DU SITE (purs, sans framework ni build) -->
+  <script src="assets/js/zip.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
